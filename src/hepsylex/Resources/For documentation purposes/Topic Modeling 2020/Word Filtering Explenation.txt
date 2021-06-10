@@ -1,0 +1,16 @@
+Word Filtering
+A common strategy in preprocessing text data is to remove highly frequent function words
+- often referred to as stop words, words that do not add informative value to the words
+clusters (topics). We omitted semantically empty words, rare words and uninformative
+words. Words were omitted from each document if they corresponded to one or more of
+the following 3 conditions:
+1. The word is a function word, defined as any word whose POS is not a noun, verb,
+adjective, or adverb, and hence it does not carry topical semantic information (e.g.,
+“the,” “and,” “yes”).
+2. The word is a rare word, defined as a one that appears fewer than 10 times over the
+whole documents. Multiple appearance of the various rare-words (the “long tail”
+effect), can harm the model’s regularization and lead to poor semantic-interpretable
+topics outcome.
+3. The word is a common word, defined as a one that appears in more than 90% of
+the documents. High-frequency words are subsumed by most topics and thus detract
+from the richness of the meaning of the topics.
